@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iglesia del Nazareno — Arequipa</title>
+  <meta name="description" content="Iglesia del Nazareno en Arequipa. Juan 3:16 - Direcciones, horarios de culto y ubicación de nuestras sedes." />
+  
+  <!-- Tipografías Google Fonts: Plus Jakarta Sans (moderna y limpia) + Cormorant Garamond (solemne para el versículo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Librería QR -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+          },
+          colors: {
+            obsidian: '#080907',
+            oliveGlow: '#9AA844',
+            oliveDark: '#1A1E12',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #080907;
+      color: #F4F4F0;
+      overflow-x: hidden;
+    }
+
+    /* Cuadrícula arquitectónica sutil como en tu imagen de referencia */
+    .bg-grid-pattern {
+      background-size: 84px 84px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    }
+
+    /* Difuminados profundos hacia el negro (característicos de la referencia) */
+    .hero-vignette {
+      background: 
+        linear-gradient(180deg, rgba(8, 9, 7, 0.62) 0%, rgba(8, 9, 7, 0.28) 38%, rgba(8, 9, 7, 0.90) 78%, #080907 100%),
+        radial-gradient(circle at 68% 35%, rgba(212, 185, 130, 0.14) 0%, rgba(8, 9, 7, 0.80) 70%);
+    }
+
+    /* Barra flotante translúcida estilo Glassmorphism */
+    .glass-bar {
+      background: rgba(16, 18, 13, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(154, 168, 68, 0.24);
+      box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.85);
+    }
+
+    /* Tarjetas con borde oliva fino y difuminado interno oscuro */
+    .sede-card {
+      background: linear-gradient(180deg, rgba(22, 25, 17, 0.72) 0%, rgba(10, 11, 9, 0.96) 100%);
+      border: 1px solid rgba(154, 168, 68, 0.30);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sede-card:hover {
+      border-color: rgba(182, 198, 82, 0.78);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(154, 168, 68, 0.16);
+    }
+
+    /* Difuminado sobre las imágenes de cada tarjeta */
+    .card-image-fade {
+      background: linear-gradient(180deg, rgba(8,9,7,0.08) 0%, rgba(8,9,7,0.45) 65%, rgba(12,13,10,0.98) 100%);
+    }
+
+    /* Resplandor ambiental sutil */
+    .ambient-glow {
+      background: radial-gradient(circle, rgba(154, 168, 68, 0.11) 0%, rgba(8, 9, 7, 0) 70%);
+      pointer-events: none;
+    }
+
+    /* Integración nítida y luminosa del logo sobre fondo oscuro */
+    .logo-dark-blend {
+      filter: invert(1) contrast(1.65) brightness(1.15);
+      mix-blend-mode: screen;
+    }
+  </style>
+</head>
+<body class="bg-grid-pattern antialiased selection:bg-[#9AA844] selection:text-black">
+
+  <!-- ==================== HERO SECTION CON TU IMAGEN Y LOGO ==================== -->
+  <header class="relative min-h-[90vh] flex flex-col justify-between overflow-hidden">
+    <!-- Imagen de fondo principal -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="img/hero-pastor.jpg" 
+        alt="El Buen Pastor" 
+        class="w-full h-full object-cover object-[center_28%] scale-105 brightness-90 contrast-105"
+      />
+      <!-- Capa de difuminados oscuros para fundir la imagen con el fondo negro -->
+      <div class="absolute inset-0 hero-vignette"></div>
+    </div>
+
+    <!-- Navegación Superior Minimalista -->
+    <nav class="relative z-20 max-w-6xl w-full mx-auto px-5 sm:px-8 pt-6 pb-4 flex items-center justify-between gap-3">
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl border border-[#9AA844]/55 bg-black/65 backdrop-blur-md flex items-center justify-center p-2 overflow-hidden shadow-lg shadow-black/60">
+          <img 
+            src="img/logo-nazareno.jpg" 
+            alt="Logo Iglesia del Nazareno" 
+            class="w-full h-full object-contain logo-dark-blend"
+          />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs sm:text-sm font-semibold tracking-[0.22em] text-white uppercase">Iglesia del Nazareno</span>
+          <span class="text-[10px] sm:text-xs tracking-[0.18em] text-[#B5C454] uppercase">Arequipa • Perú</span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-7 text-xs font-medium tracking-wider text-stone-300 uppercase">
+        <a href="#mensaje" class="hover:text-white transition">Mensaje</a>
+        <a href="#sedes" class="hover:text-white transition">Sedes en Arequipa</a>
+      </div>
+
+      <button 
+        onclick="openQrModal()" 
+        class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/55 hover:bg-[#9AA844] text-stone-200 hover:text-black border border-white/15 hover:border-[#9AA844] backdrop-blur-md text-xs font-medium transition duration-300 cursor-pointer shrink-0"
+      >
+        <i data-lucide="qr-code" class="w-3.5 h-3.5"></i>
+        <span>Compartir QR</span>
+      </button>
+    </nav>
+
+    <!-- Contenido Central: Logo Grande, Nombre de la Iglesia y Juan 3:16 -->
+    <div id="mensaje" class="relative z-20 max-w-6xl w-full mx-auto px-5 sm:px-8 my-auto pt-8 pb-10">
+      <div class="max-w-3xl">
+        <!-- Insignia destacada con logo grande y visible -->
+        <div class="inline-flex items-center gap-4 px-4 py-2.5 rounded-2xl bg-black/70 border border-[#9AA844]/50 backdrop-blur-md mb-6 shadow-xl shadow-black/50">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-black/50 border border-white/10 p-1.5 flex items-center justify-center shrink-0">
+            <img 
+              src="img/logo-nazareno.jpg" 
+              alt="Emblema Iglesia del Nazareno" 
+              class="w-full h-full object-contain logo-dark-blend"
+            />
+          </div>
+          <div class="flex items-center gap-2 pr-2">
+            <span class="w-2 h-2 rounded-full bg-[#B5C454] animate-pulse"></span>
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D6DF9B]">Bienvenidos a casa</span>
+          </div>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl md:text-[64px] font-semibold tracking-tight text-white leading-[1.06] uppercase mb-6 drop-shadow-2xl">
+          Iglesia del <br class="hidden sm:inline" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F4F4F0] via-[#E5E8C8] to-[#B5C454]">
+            Nazareno
+          </span>
+        </h1>
+
+        <!-- Versículo Juan 3:16 con estética editorial y resplandor cálido -->
+        <blockquote class="relative pl-5 sm:pl-6 border-l-2 border-[#9AA844]/80 max-w-2xl">
+          <p class="font-serif italic text-xl sm:text-2xl md:text-[27px] text-stone-100 leading-relaxed drop-shadow">
+            «Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.»
+          </p>
+          <footer class="mt-3 flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-[#B5C454]">
+            <span>Juan 3:16</span>
+            <span class="text-stone-600">•</span>
+            <span class="text-stone-400 font-normal tracking-normal normal-case">Reina-Valera 1960</span>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Barra Flotante de Filtro -->
+    <div class="relative z-20 max-w-6xl w-full mx-auto px-5 sm:px-8 pb-8">
+      <div class="glass-bar rounded-2xl p-3 sm:p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+        
+        <!-- Filtro por Distrito -->
+        <div class="flex-1 flex items-center gap-3 px-3 py-2 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+          <i data-lucide="map-pin" class="w-4 h-4 text-[#B5C454] shrink-0"></i>
+          <div class="w-full">
+            <label for="districtFilter" class="block text-[10px] uppercase tracking-wider text-stone-400">Distrito en Arequipa</label>
+            <select id="districtFilter" onchange="filterSedes()" class="w-full bg-transparent text-sm text-white font-medium focus:outline-none cursor-pointer">
+              <option value="all" class="bg-[#12140E] text-white">Todas las sedes (6)</option>
+              <option value="Yanahuara" class="bg-[#12140E] text-white">Yanahuara (Umacollo)</option>
+              <option value="Cercado" class="bg-[#12140E] text-white">Cercado (La Puerta Abierta)</option>
+              <option value="Cerro Colorado" class="bg-[#12140E] text-white">Cerro Colorado (Zamacola / Alto Libertad)</option>
+              <option value="Paucarpata" class="bg-[#12140E] text-white">Paucarpata (Huacsapata)</option>
+              <option value="Por confirmar" class="bg-[#12140E] text-white">Príncipe de Paz</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Filtro por Día -->
+        <div class="flex-1 flex items-center gap-3 px-3 py-2 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+          <i data-lucide="calendar" class="w-4 h-4 text-[#B5C454] shrink-0"></i>
+          <div class="w-full">
+            <label for="dayFilter" class="block text-[10px] uppercase tracking-wider text-stone-400">Día de reunión</label>
+            <select id="dayFilter" onchange="filterSedes()" class="w-full bg-transparent text-sm text-white font-medium focus:outline-none cursor-pointer">
+              <option value="all" class="bg-[#12140E] text-white">Cualquier día de la semana</option>
+              <option value="Domingo" class="bg-[#12140E] text-white">Domingos</option>
+              <option value="Sábado" class="bg-[#12140E] text-white">Sábados</option>
+              <option value="Semana" class="bg-[#12140E] text-white">Miércoles / Jueves / Viernes</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Botón de Acción Oliva -->
+        <a 
+          href="#sedes" 
+          class="px-6 py-3.5 rounded-xl bg-[#9AA844] hover:bg-[#AEBD4F] text-[#080907] font-semibold text-sm tracking-wide flex items-center justify-center gap-2 transition duration-200 shadow-lg shadow-[#9AA844]/20 shrink-0"
+        >
+          <span>Ver sedes</span>
+          <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== SECCIÓN DE SEDES EN AREQUIPA ==================== -->
+  <main id="sedes" class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-10 pb-24">
+    <!-- Resplandor ambiental difuminado -->
+    <div class="ambient-glow w-[500px] h-[500px] rounded-full absolute -top-20 -left-40"></div>
+
+    <!-- Encabezado de Sección -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+      <div>
+        <span class="text-xs font-semibold tracking-[0.22em] uppercase text-[#B5C454]">Congregaciones Locales</span>
+        <h2 class="text-2xl sm:text-4xl font-semibold text-white tracking-tight mt-1">Nuestras sedes en Arequipa</h2>
+      </div>
+      <p id="resultsCount" class="text-xs sm:text-sm text-stone-400">Mostrando las 6 sedes registradas</p>
+    </div>
+
+    <!-- Grid de Tarjetas de Sedes -->
+    <div id="sedesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Las tarjetas se generan dinámicamente -->
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="relative z-10 border-t border-white/[0.07] bg-[#060705]">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+      <div class="flex items-center gap-3.5 text-stone-300">
+        <div class="w-12 h-12 rounded-xl bg-black/50 border border-[#9AA844]/30 p-1.5 flex items-center justify-center shrink-0">
+          <img 
+            src="img/logo-nazareno.jpg" 
+            alt="Logo Iglesia del Nazareno" 
+            class="w-full h-full object-contain logo-dark-blend"
+          />
+        </div>
+        <span class="font-semibold tracking-widest uppercase">Iglesia del Nazareno — Arequipa</span>
+      </div>
+      <p class="text-center sm:text-right">«Porque de tal manera amó Dios al mundo...» — Juan 3:16</p>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL DE CÓDIGO QR ==================== -->
+  <div id="qrModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="relative w-full max-w-sm rounded-2xl bg-[#11130E] border border-[#9AA844]/40 p-6 text-center shadow-2xl">
+      <button onclick="closeQrModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div class="w-20 h-20 mx-auto mb-2 rounded-2xl bg-black/60 border border-[#9AA844]/40 p-2 flex items-center justify-center">
+        <img 
+          src="img/logo-nazareno.jpg" 
+          alt="Logo Iglesia del Nazareno" 
+          class="w-full h-full object-contain logo-dark-blend"
+        />
+      </div>
+      <span class="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#B5C454]">Acceso Directo</span>
+      <h3 class="text-lg font-semibold text-white mt-1">Escanea para visitar</h3>
+      <p class="text-xs text-stone-400 mt-1 mb-5">Iglesia del Nazareno • Sedes Arequipa</p>
+      
+      <div class="bg-white p-4 rounded-xl inline-block mx-auto mb-5 shadow-inner">
+        <div id="qrcode"></div>
+      </div>
+
+      <p class="text-[11px] text-stone-400 break-all bg-black/40 px-3 py-2 rounded-lg border border-white/5" id="currentUrlText"></p>
+    </div>
+  </div>
+
+  <!-- Notificación Toast al copiar dirección -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-full bg-[#9AA844] text-black text-xs font-semibold shadow-xl opacity-0 pointer-events-none transition-opacity duration-300 flex items-center gap-2">
+    <i data-lucide="check" class="w-4 h-4"></i>
+    <span>Dirección copiada al portapapeles</span>
+  </div>
+
+  <script>
+    // Datos exactos de Direcciones.pdf + cada imagen única para las 6 sedes
+    const sedesData = [
+      {
+        nombre: "Iglesia del Nazareno de Umacollo",
+        distrito: "Yanahuara",
+        direccion: "María Nieves y Bustamante 112, Arequipa 04013",
+        mapsUrl: "https://maps.app.goo.gl/9w9umkvEBfyMr11M7",
+        horarios: "Miércoles (7:00 p. m. – 9:00 p. m.), viernes (10:00 a. m. – 12:00 m.), sábado (4:00 p. m. – 6:00 p. m.) y domingo (10:00 a. m. – 12:00 m.)",
+        diasTags: ["Domingo", "Sábado", "Semana"],
+        imagen: "img/sede-cordero.jpg",
+        badge: "Yanahuara"
+      },
+      {
+        nombre: "Iglesia del Nazareno - La Puerta Abierta",
+        distrito: "Cercado",
+        direccion: "Sebastián Barranca 305, Arequipa 04001",
+        mapsUrl: "https://maps.app.goo.gl/828SMommYAETAm1h7",
+        horarios: "Jueves y sábado (5:30 p. m. – 8:00 p. m.), domingo (10:00 a. m. – 12:30 p. m.)",
+        diasTags: ["Domingo", "Sábado", "Semana"],
+        imagen: "img/sede-ensenanza.jpg",
+        badge: "Cercado"
+      },
+      {
+        nombre: "Iglesia del Nazareno Príncipe de Paz",
+        distrito: "Por confirmar",
+        direccion: "Dirección por confirmar en Arequipa",
+        mapsUrl: "",
+        horarios: "Domingo (10:30 a. m.)",
+        diasTags: ["Domingo"],
+        imagen: "img/sede-cena.jpg",
+        badge: "Arequipa"
+      },
+      {
+        nombre: "Iglesia del Nazareno Zamacola",
+        distrito: "Cerro Colorado",
+        direccion: "Yapura 501, Arequipa 04017",
+        mapsUrl: "https://maps.app.goo.gl/r9NziUHJrLHK3VN38",
+        horarios: "Consultar horarios localmente",
+        diasTags: [],
+        imagen: "img/sede-camino-luz.jpg",
+        badge: "Cerro Colorado"
+      },
+      {
+        nombre: "Iglesia del Nazareno Alto Libertad",
+        distrito: "Cerro Colorado",
+        direccion: "Av. San Martín 802, Arequipa 04014",
+        mapsUrl: "https://maps.app.goo.gl/Eddn9mPva33sgBzn6",
+        horarios: "Consultar horarios localmente",
+        diasTags: [],
+        imagen: "img/sede-aguas.jpg",
+        badge: "Cerro Colorado"
+      },
+      {
+        nombre: "Iglesia del Nazareno Huacsapata",
+        distrito: "Paucarpata",
+        direccion: "HG9C+G2R, Paucarpata 04008 (zona de Huacsapata)",
+        mapsUrl: "https://maps.app.goo.gl/nNcREnpbHPv4znEZ8",
+        horarios: "Consultar horarios localmente",
+        diasTags: [],
+        imagen: "img/sede-olivo.jpg",
+        badge: "Paucarpata"
+      }
+    ];
+
+    function renderSedes(lista) {
+      const grid = document.getElementById('sedesGrid');
+      const count = document.getElementById('resultsCount');
+      grid.innerHTML = '';
+
+      count.textContent = lista.length === 1 
+        ? 'Mostrando 1 sede en Arequipa' 
+        : `Mostrando ${lista.length} sedes en Arequipa`;
+
+      lista.forEach((sede) => {
+        const hasMap = sede.mapsUrl && sede.mapsUrl.trim() !== "";
+        
+        const card = document.createElement('article');
+        card.className = 'sede-card rounded-2xl overflow-hidden flex flex-col justify-between group';
+
+        card.innerHTML = `
+          <div>
+            <!-- Contenedor de imagen con difuminado superior e inferior -->
+            <div class="relative h-52 overflow-hidden bg-black">
+              <img 
+                src="${sede.imagen}" 
+                alt="${sede.nombre}" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700 brightness-90"
+              />
+              <div class="absolute inset-0 card-image-fade"></div>
+
+              <!-- Etiqueta flotante estilo cápsula -->
+              <div class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/15 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#B5C454]"></span>
+                <span class="text-[11px] font-medium text-stone-100">${sede.badge}</span>
+              </div>
+            </div>
+
+            <!-- Información de la Sede -->
+            <div class="px-5 pt-2 pb-5">
+              <h3 class="text-lg font-semibold text-white leading-snug mb-3 group-hover:text-[#D9E396] transition">
+                ${sede.nombre}
+              </h3>
+
+              <div class="space-y-2.5 text-xs text-stone-300">
+                <div class="flex items-start gap-2.5">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-[#9AA844] shrink-0 mt-0.5"></i>
+                  <span class="leading-relaxed text-stone-300">${sede.direccion}</span>
+                </div>
+
+                <div class="flex items-start gap-2.5">
+                  <i data-lucide="clock" class="w-4 h-4 text-[#9AA844] shrink-0 mt-0.5"></i>
+                  <span class="leading-relaxed text-stone-400">${sede.horarios}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botones de acción al pie de la tarjeta -->
+          <div class="px-5 pb-5 pt-2 flex items-center gap-2.5">
+            ${hasMap ? `
+              <a 
+                href="${sede.mapsUrl}" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="flex-1 py-2.5 px-3.5 rounded-xl bg-[#9AA844]/15 hover:bg-[#9AA844] text-[#D4DF8B] hover:text-black border border-[#9AA844]/40 text-xs font-semibold flex items-center justify-center gap-2 transition duration-200"
+              >
+                <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                <span>Cómo llegar</span>
+              </a>
+            ` : `
+              <span class="flex-1 py-2.5 px-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-stone-500 text-xs text-center">
+                Ubicación pendiente
+              </span>
+            `}
+
+            <button 
+              onclick="copyAddress('${sede.direccion.replace(/'/g, "\\'")}')"
+              title="Copiar dirección"
+              class="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/10 border border-white/10 text-stone-300 hover:text-white transition cursor-pointer"
+            >
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    function filterSedes() {
+      const district = document.getElementById('districtFilter').value;
+      const day = document.getElementById('dayFilter').value;
+
+      const filtered = sedesData.filter(sede => {
+        const matchDistrict = district === 'all' || sede.distrito === district;
+        const matchDay = day === 'all' || sede.diasTags.includes(day);
+        return matchDistrict && matchDay;
+      });
+
+      renderSedes(filtered);
+    }
+
+    function copyAddress(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.remove('opacity-0');
+        setTimeout(() => toast.classList.add('opacity-0'), 2400);
+      });
+    }
+
+    // Generación del Código QR dinámico
+    let qrGenerated = false;
+    function openQrModal() {
+      const modal = document.getElementById('qrModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      const currentUrl = window.location.href;
+      document.getElementById('currentUrlText').textContent = currentUrl;
+
+      if (!qrGenerated) {
+        new QRCode(document.getElementById("qrcode"), {
+          text: currentUrl,
+          width: 180,
+          height: 180,
+          colorDark: "#080907",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+        qrGenerated = true;
+      }
+    }
+
+    function closeQrModal() {
+      const modal = document.getElementById('qrModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Inicializar al cargar
+    document.addEventListener('DOMContentLoaded', () => {
+      renderSedes(sedesData);
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
